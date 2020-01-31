@@ -1,4 +1,5 @@
 #include<iostream>
+#include<ctime>
 #include<string>
 
 using namespace std;
@@ -7,12 +8,18 @@ string cardNames[] = {"","A","2","3","4","5","6","7","8","9","10","J","Q","K"};
 int cardScores[] = {0,1,2,3,4,5,6,7,8,9,10,10,10,10};
 
 int drawCard(void){
-	//Write the function to random the number from 1 to 13 and return that random number.
+	//Write the function to random the number from 1 to 13 and return that random number.                             
+
+    int x=rand()%13 +1;
+	return x;
 }
 
 int calScore(int x,int y,int z){
 	//Write the function to calculate the score with is the rightmost digit of summation of the scores from three cards.
 	//Return the score. 
+	(cardScores[x]+cardScores[y]+cardScores[z])%10;
+	return 
+	
 }
 
 int findYugiAction(int s){	
@@ -34,6 +41,7 @@ void checkWinner(int p, int y){
 }
 
 int main(){	
+	srand(time(0));
 	int playerScore, yugiScore, playerAction, yugiAction;
 	int playerCards[3] = {drawCard(), drawCard(), 0};
 	int yugiCards[3]; //This line of code is not completed. You need to initialize value of yugiCards[].
